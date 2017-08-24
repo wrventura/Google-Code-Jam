@@ -1,7 +1,6 @@
 import java.util.*;
 import java.io.*;
 public class TidyNumbers {
-	public static final String INPUT_FILE = "B-large-practice.in.txt";
 	public static String tidyUp(String str){
 		if(str.length() < 2){
 			if(str.equals("0"))
@@ -14,7 +13,8 @@ public class TidyNumbers {
 				if(str.charAt(i) < str.charAt(i-1)){
 					char c = str.charAt(i-1);
 					c--;
-					return tidyUp(str.substring(0,i-1)+c)+nines(str.length()-i);
+					return tidyUp(str.substring(0,i-1)+c) +
+						nines(str.length()-i);
 				}
 			}
 		}
@@ -27,15 +27,12 @@ public class TidyNumbers {
 		return temp;
 	}
 	public static void main(String[] args) throws Exception{
-		File inputFile = new File(INPUT_FILE);
-		Scanner input = new Scanner(inputFile);
-		PrintWriter output = new PrintWriter("B-large-output.txt");
+		Scanner input = new Scanner(System.in);
 		int testCases = input.nextInt();
 		input.nextLine();
 		for(int i = 1;i <= testCases;i++){
 			String number = input.nextLine();
-			output.printf("Case #%d: %s\n",i,tidyUp(number));	
+			System.out.println.printf("Case #%d: %s\n",i,tidyUp(number));	
 		}
-		output.close();
 	}
 }
