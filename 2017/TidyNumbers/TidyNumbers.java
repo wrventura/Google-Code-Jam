@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 public class TidyNumbers {
 	public static String tidyUp(String str){
 		if(str.length() < 2){
