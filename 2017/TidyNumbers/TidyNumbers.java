@@ -25,7 +25,7 @@ public class TidyNumbers {
 			temp += "9";
 		return temp;
 	}
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int testCases = input.nextInt();
 		input.nextLine();
